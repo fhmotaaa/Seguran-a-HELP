@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+import hashlib
+
+def criar_hash(dado):
+    return hashlib.sha256(dado.encode()).hexdigest()
+
+if __name__ == "__main__":
+    dado = input("Digite um dado sensível (ex: senha): ")
+    hash_resultado = criar_hash(dado)
+    print(f"Hash SHA-256: {hash_resultado}")
